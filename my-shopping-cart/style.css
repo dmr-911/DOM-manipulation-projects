@@ -1,0 +1,27 @@
+
+.cart-body{
+    background-color: gray;
+}
+.product-image{
+    width: 125px;
+}
+.remove-item {
+    width: 25px;
+    height: 25px;
+}
+.button{
+    cursor: pointer;
+    padding: 10px;
+    font-weight: 400;
+    font-size: larger;
+    border: 2px solid white;
+}
+.button:hover{
+    border: 2px solid rgba(28, 148, 44, 0.623);
+}
+.input{
+    width: 65px;
+    padding: 5px;
+    font-weight: 400;
+    font-size: larger;
+}
