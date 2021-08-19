@@ -1,5 +1,5 @@
 function inputUpdate(inputId, isTrue) {
-    const input = document.getElementById(inputId+ "-input");
+    const input = document.getElementById(inputId + "-input");
     let inputValue = input.value;
     if (isTrue) {
         inputValue = parseFloat(inputValue) + 1;
@@ -42,3 +42,22 @@ document.getElementById('case-plus').addEventListener('click', function () {
 document.getElementById('case-minus').addEventListener('click', function () {
     inputUpdate('case', false);
 })
+const removeButtons = document.getElementsByClassName('remove-item');
+for (const button of removeButtons) {
+    button.addEventListener('click', function (event) {
+        const targetParent = event.target.parentNode.parentNode.parentNode;
+        targetParent.style.display = "none";
+
+        const phoneTotal = document.getElementById("phone-total-price");
+        phoneTotal.innerText = 0;
+        const caseTotal = document.getElementById('case-total-price');
+        caseTotal.innerText = 0;
+        
+        document.getElementById('phone-input').value = 0;
+        document.getElementById('case-input').value = 0;
+        document.getElementById('sub-total').innerText = 0;
+        document.getElementById('tax').innerText = 0;
+        document.getElementById('total').innerText = 0
+
+    })
+}

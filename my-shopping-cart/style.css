@@ -1,6 +1,6 @@
 
 .cart-body{
-    background-color: gray;
+    background-color: rgb(240, 237, 237);
 }
 .product-image{
     width: 125px;
@@ -8,6 +8,7 @@
 .remove-item {
     width: 25px;
     height: 25px;
+    cursor: pointer;
 }
 .button{
     cursor: pointer;

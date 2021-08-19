@@ -14,7 +14,7 @@
 </head>
 <body>
     <header class="container mb-5">
-        <h1>My shopping cart</h1>
+        <h1 class="text-center mt-3">My shopping cart</h1>
     </header>
     <section class="container cart-body p-4">
         <!-- phone part -->
@@ -25,10 +25,10 @@
                 <h3 class="fw-bold fs-4">iPhone 11 128GB Black</h3>
                 
             </div>
-            <div class="col-lg-6 d-flex align-items-center justify-content-lg-evenly">
+            <div class="col-lg-6 d-flex align-items-center">
                 <div>
                     <i id="phone-minus" class="fas fa-minus button rounded-end"></i>
-                    <input id="phone-input" class="input rounded-2" type="number" name="" id="" value="1">
+                    <input id="phone-input" class="input rounded-2 text-center" type="number" name="" id="" value="1" disabled>
                     <i id="phone-plus" class="fas fa-plus button rounded-end"></i>
                 </div>
                 <p class="pt-3 fs-3 mx-3">$<span id="phone-total-price">1219</span></p>
@@ -40,15 +40,15 @@
         <!-- Case part -->
         <div class="cart-item bg-white rounded-2">
             <div class="row">
-            <div class="col-lg-6 cart-item d-flex align-items-center">
+            <div class="col-12 col-lg-6 cart-item d-flex align-items-center">
                 <img class="img-fluid product-image" src="images/product-2.png" alt="">
                 <h3 class="fw-bold fs-4">iPhone 11 Silicone Case - Black</h3>
                 
             </div>
-            <div class="col-lg-6 d-flex align-items-center justify-content-lg-evenly">
+            <div class="col-12 col-lg-6 d-flex align-items-center">
                 <div>
                     <i id="case-minus" class="fas fa-minus button rounded-end"></i>
-                    <input id="case-input" class="input rounded-2" type="number" name="" id="" value="1">
+                    <input id="case-input" class="input rounded-2 text-center" type="number" name="" id="" value="1" disabled>
                     <i id="case-plus" class="fas fa-plus button rounded-end"></i>
                 </div>
                 <p class="pt-3 fs-3 mx-3">$<span id="case-total-price">59</span></p>
@@ -61,12 +61,12 @@
     <section class="container mt-4 p-3 cart-body">
         <div class="cart-item bg-white rounded-2 p-2">
             <div class="row fs-5 fw-bold">
-            <div class="row col-lg-6 cart-item">
+            <div class="col-lg-6 cart-item col-6">
                 <p>SubTotal</p>
                 <p>Tax</p>
                 <p>Total</p>
             </div>
-            <div class="row col-lg-6 text-end">
+            <div class="col-lg-6 col-6 text-lg-end">
                 <p>$<span id="sub-total">1278</span></p>
                 <p>$ <span id="tax">12.78</span></p>
                 <p>$ <span id="total">1290.78</span></p>
