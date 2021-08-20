@@ -17,17 +17,22 @@ function inputUpdate(inputId, isTrue) {
     }
     updateTotals();
 }
+function updateTotalAmount(subTotalAmount) {
+    const tax = document.getElementById('tax');
+    const taxAmount = subTotalAmount / 10;
+    tax.innerText = taxAmount;
+    const total = document.getElementById('total');
+    total.innerText = subTotalAmount + taxAmount;
+}
+
 function updateTotals() {
     const phoneTotalPrice = document.getElementById('phone-total-price').innerText;
     const caseTotalPrice = document.getElementById('case-total-price').innerText;
     const subTotal = document.getElementById('sub-total');
     const subTotalAmount = parseFloat(phoneTotalPrice) + parseFloat(caseTotalPrice);
     subTotal.innerText = subTotalAmount;
-    const tax = document.getElementById('tax');
-    const taxAmount = subTotalAmount / 10;
-    tax.innerText = taxAmount;
-    const total = document.getElementById('total');
-    total.innerText = subTotalAmount + taxAmount;
+    
+    updateTotalAmount(subTotalAmount)
 }
 
 document.getElementById('phone-plus').addEventListener('click', function () {
@@ -42,22 +47,19 @@ document.getElementById('case-plus').addEventListener('click', function () {
 document.getElementById('case-minus').addEventListener('click', function () {
     inputUpdate('case', false);
 })
+
 const removeButtons = document.getElementsByClassName('remove-item');
 for (const button of removeButtons) {
     button.addEventListener('click', function (event) {
         const targetParent = event.target.parentNode.parentNode.parentNode;
+        const targetChild = event.target.parentNode.children[1].children[0].innerText;
         targetParent.style.display = "none";
-
-        const phoneTotal = document.getElementById("phone-total-price");
-        phoneTotal.innerText = 0;
-        const caseTotal = document.getElementById('case-total-price');
-        caseTotal.innerText = 0;
-        
-        document.getElementById('phone-input').value = 0;
-        document.getElementById('case-input').value = 0;
-        document.getElementById('sub-total').innerText = 0;
-        document.getElementById('tax').innerText = 0;
-        document.getElementById('total').innerText = 0
-
+        const subTotal = document.getElementById('sub-total');
+        let subTotalAmount = subTotal.innerText;
+        if (targetParent.style.display == 'none') {
+            subTotalAmount = parseFloat(subTotalAmount) - parseFloat(targetChild);
+        }
+        subTotal.innerText = subTotalAmount;
+        updateTotalAmount(subTotalAmount);
     })
 }
