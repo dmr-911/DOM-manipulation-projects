@@ -32,7 +32,7 @@ function updateTotals() {
     const subTotalAmount = parseFloat(phoneTotalPrice) + parseFloat(caseTotalPrice);
     subTotal.innerText = subTotalAmount;
     
-    updateTotalAmount(subTotalAmount)
+    updateTotalAmount(subTotalAmount);
 }
 
 document.getElementById('phone-plus').addEventListener('click', function () {
