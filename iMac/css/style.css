@@ -1,0 +1,13 @@
+/* memory , storage and balance items style  */
+.extras{
+   cursor: pointer;
+}
+.extras:hover{
+    background-color: black;
+    color: white;
+    transition: background-color .8s;
+}
+.black-line{
+    height: 2px;
+    border: 2px solid black;
+}
